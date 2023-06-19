@@ -1,6 +1,22 @@
+const digits = document.getElementsByClassName("digit");
+const screen = document.getElementById("screen");
+const clear = document.getElementById("clear");
 let num1;
 let num2;
 let operator;
+let displayValue = 0;
+
+for (let i = 0; i < digits.length; i++) {
+    digits[i].addEventListener("click", function() {
+        displayValue = displayValue*10 + parseInt(digits[i].textContent);
+        screen.textContent = displayValue;
+    });
+}
+clear.addEventListener("click", function() {
+    displayValue = 0;
+    screen.textContent = displayValue;
+});
+
 
 function add(a,b) {
 	return a + b;

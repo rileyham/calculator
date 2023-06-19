@@ -17,7 +17,7 @@ button {
 
 }
 
-.screen {
+#screen {
     width: 220px;
     background-color: lightgrey;
     font-size: 60px;
