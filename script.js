@@ -6,7 +6,7 @@ const operators = document.getElementsByClassName("operator");
 
 let num1;
 let num2;
-let operator;
+let operator = "";
 let displayValue = 0;
 let numToggle = false;
 
@@ -19,14 +19,28 @@ for (let i = 0; i < digits.length; i++) {
 
 for (let i = 0; i < operators.length; i++) {
     operators[i].addEventListener("click", function() {
-        num1 = displayValue;
-        displayValue = 0;
-        operator = operators[i].textContent;
+        if(operator == "") {
+            num1 = displayValue;
+            displayValue = 0;
+            operator = operators[i].textContent;
+        }
+        else {
+            num2 = displayValue; 
+            displayValue = operate(num1, num2, operator);
+            screen.textContent = displayValue;
+            num1 = displayValue;
+            displayValue = 0;
+            operator = operators[i].textContent;
+
+        }
     });
 }
 
 clear.addEventListener("click", function() {
     displayValue = 0;
+    num1 = 0;
+    num2 = 0;
+    operator = "";
     screen.textContent = displayValue;
 });
 
@@ -34,6 +48,7 @@ equals.addEventListener("click", function() {
     num2 = displayValue;
     displayValue = operate(num1, num2, operator);
     screen.textContent = displayValue;
+    operator = "";
 });
 
 
@@ -47,11 +62,14 @@ function subtract(a,b) {
 };
 
 function multiply(a,b) {
-  return a * b
+  return a * b;
 };
 
 function divide(a,b) {
-    return a / b
+    if(b==0) {
+        return "Invalid";
+    }
+    return a / b;
 }
 
 function operate(num1, num2, operator) {
