@@ -1,13 +1,17 @@
 html, body {
     margin: 0px;
-    background-color: rgb(56, 56, 56);
+    background-color: #E8EDED;
 }
 
 button {
     font-size: 60px;
     height: 72px;
-    width: 52px;
+    width: 56px;
     margin: 4px;
+    border-radius: 8px;
+    background-color: #E8EDED;
+    font-family: monospace;
+    
 }
 
 .container {
@@ -19,18 +23,33 @@ button {
 }
 
 .calc {
-    background-color: beige;
-    padding: 12px;
+    background-color: #003049;
+    padding: 16px;
     border-radius: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.operator {
+    background-color: #FCBF49;
+}
+
+#equals {
+    background-color: #F77F00;
+}
+
+#clear {
+    background-color: #D62828;
 }
 
 #screen {
-    width: 220px;
+    width: 232px;
     background-color: lightgrey;
     font-size: 60px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 12px;
     margin: 4px;
     border-radius: 12px;
     border: solid;
+    text-align: right;
 }
 
